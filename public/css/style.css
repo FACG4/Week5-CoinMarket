@@ -12,7 +12,13 @@
 .tableHead div{
   border-right: 5px solid #000;
     text-align: center;
+    margin: 5px
 }
 .tableHead div h4{
     text-align: center;
+}
+#resultTable div {
+  display: flex;
+  justify-content: space-around;
+
 }
