@@ -1,0 +1,26 @@
+{
+  "name": "Week5-CoinMarket",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/FACG4/Week5-CoinMarket.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/FACG4/Week5-CoinMarket/issues"
+  },
+  "homepage": "https://github.com/FACG4/Week5-CoinMarket#readme",
+  "devDependencies": {
+    "eslint": "^4.19.1",
+    "supertest": "^3.0.0",
+    "tap-spec": "^4.1.1",
+    "tape": "^4.9.0"
+  }
+}
