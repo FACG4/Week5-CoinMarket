@@ -1,0 +1,18 @@
+.tableHead{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  font-style: italic;
+  font-size: 30px;
+  background-color: gray;
+  margin-top: 15px;
+
+
+}
+.tableHead div{
+  border-right: 5px solid #000;
+    text-align: center;
+}
+.tableHead div h4{
+    text-align: center;
+}

@@ -20,14 +20,37 @@
 
     <section class="resultSection">
       <div class="formDiv">
-        <form class="form" action="index.html" method="post">
+        <form class="form" action="index.html" method="post" id="formId">
           <label for="inputId"> search for your currency</label>
           <input id="inputId" type="text" name="" value="">
-          <button type="button" name="button">Convert</button>
+          <button type="button" name="button" id="searchButton">search</button>
         </form>
 
       </div>
       <div class="result">
+
+    <div class="resultTable" id="resultTable">
+      <div class="tableHead">
+        <div class="tableName">
+          <h4>Name</h4>
+
+        </div>
+        <div class="tableRank">
+          <h4>Rank</h4>
+        </div>
+        <div class="tablePrice">
+          <h4>Price</h4>
+        </div>
+        <div class="tablePrecent">
+          <h4>Percent 1h</h4>
+        </div>
+        <div class="tableUpdate">
+          <h4>Last Update</h4>
+        </div>
+
+      </div>
+
+    </div>
 
       </div>
     </section>
