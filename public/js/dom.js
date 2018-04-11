@@ -94,6 +94,7 @@ if (selector("#searchButton")) {
     fetch("GET","https://api.coinmarketcap.com/v1/ticker/",inputValue,(res)=>{
 
       createTable(res)
+
     })
   })
 }
@@ -131,9 +132,9 @@ array2.forEach((fig) =>{
     fetch("GET","https://api.coinmarketcap.com/v1/ticker/",symbol,(res) =>{
       createDetails(res[0],fig.id);
 
-
     })
   })
+
 })
 
   let inputValue = selector("#inputConvert");
