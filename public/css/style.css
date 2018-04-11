@@ -1,6 +1,7 @@
 body{
-  /* background-image: url("https://cdn.pixabay.com/photo/2018/04/04/15/14/bitcoin-3290060_960_720.jpg"); */
-/* background-size: cover; */
+  /* background-image: url("./img/baac.jpg");
+ background-size: cover; */
+ text-align: center;
 }
 .tableHead{
   display: flex;

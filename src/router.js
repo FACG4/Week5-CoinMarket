@@ -4,6 +4,7 @@ const https = require('https')
 const router = (req, res)=>{
   const endpoint = req.url ;
   if(endpoint === '/'){
+
       handler.serveFiles('/index.html',res)
 
 
@@ -15,7 +16,10 @@ const router = (req, res)=>{
     });
 
   } else if(endpoint === "/search"){
+    handler.getCurrency(`https://api.coinmarketcap.com/v1/ticker/${coin}`,(data)=>{
 
+      res.end(data)
+    });
 
   }else {
     handler.serveFiles(endpoint, res)
