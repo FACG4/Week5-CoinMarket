@@ -22,7 +22,7 @@ const serveFiles = (endpoint, res)=>{
   });
 }
 // let data ;
-const getCurrency = (url , cb)=>{
+const getData = (url , cb)=>{
   http.get(url,response=>{
     response.setEncoding("utf-8");
     let data = '';
@@ -35,6 +35,9 @@ const getCurrency = (url , cb)=>{
     })
   })
 }
+
+//convert function
+
 //
 // const request = (url)=>{
 //   getCurrency(url,(err,response,body)=>{
@@ -45,4 +48,4 @@ const getCurrency = (url , cb)=>{
 // }
 
 
-module.exports={serveFiles,getCurrency}
+module.exports={serveFiles,getData}

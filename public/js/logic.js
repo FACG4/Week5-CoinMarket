@@ -21,7 +21,7 @@ function getData(){
 getData()
 
 //on keyup event listener => call calculate
-function calculate(input){
-  return input  * USD
+function calculate(input,value){
+  return input  * value
 
 }
