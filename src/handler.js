@@ -12,17 +12,18 @@ const contentType = {
 }
 
 const serveFiles = (endpoint, res)=>{
-  const filePath = path.join(__dirname, '..','public', endpoint);//end / /css/style.css /js/dom.js
-  const fileExtention = endpoint.split('.')[1];// css js html
+  const filePath = path.join(__dirname, '..','public', endpoint);
+  const fileExtention = endpoint.split('.')[1];
   res.writeHead(200,{'Content-Type':`${contentType[fileExtention]}`});
   fs.readFile(filePath, (error, file)=>{
-    if (error){console.log(error);
+    if (error){
+      console.log(error);
     }
     res.end(file);
   });
 }
 // let data ;
-const getCurrency = (url , cb)=>{
+const getData = (url , cb)=>{
   http.get(url,response=>{
     response.setEncoding("utf-8");
     let data = '';
@@ -35,14 +36,6 @@ const getCurrency = (url , cb)=>{
     })
   })
 }
-//
-// const request = (url)=>{
-//   getCurrency(url,(err,response,body)=>{
-//      // console.log(body);
-//      data = body
-//   })
-//   return data
-// }
 
 
-module.exports={serveFiles,getCurrency}
+module.exports={serveFiles,getData}
