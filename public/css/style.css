@@ -1,5 +1,5 @@
 body{
-  background-image: url("https://cdn.pixabay.com/photo/2018/04/04/15/14/bitcoin-3290060_960_720.jpg");
+  /* background-image: url("https://cdn.pixabay.com/photo/2018/04/04/15/14/bitcoin-3290060_960_720.jpg"); */
 /* background-size: cover; */
 }
 .tableHead{
@@ -31,4 +31,47 @@ body{
   /* background-color: #258; */
   border: 1px solid;
   width:100%
+}
+
+.imgContainer{
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.row{
+  display: flex;
+  width: 100%;
+  justify-content: space-around;
+
+}
+
+.imgc{
+  width: 100px;
+
+}
+
+figcaption{
+  text-align: center;
+}
+.convertSection {
+  width: 100%;
+  display: flex;
+  background-color: #261875;
+  min-height: 300px;
+  text-align: center;
+}
+.convert{
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  /* background-color: #261875; */
+  align-items: center;
+
+}
+
+.convertButton{
+  height: 100px;
+  width: 200px;
+  text-align: center;
 }
