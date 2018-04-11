@@ -75,7 +75,7 @@ selector("#converteBtn").addEventListener("click",(event)=>{
 
       // let toatalConverted=sourceValue*res
       // selector("#outputConvert").value
-      
+
 const createDetails = (res,id) =>{
 
   let array=[res.name,res.price_usd,res.rank]
@@ -94,6 +94,7 @@ if (selector("#searchButton")) {
     fetch("GET","https://api.coinmarketcap.com/v1/ticker/",inputValue,(res)=>{
 
       createTable(res)
+
     })
   })
 }
@@ -133,13 +134,13 @@ array2.forEach((fig) =>{
 
     })
   })
+
 })
 
   let inputValue = selector("#inputConvert");
 inputValue.addEventListener("keyup",(event)=>{
   let calculatedValue = calculate(inputValue.value ,  convertedValue)
-  console.log(convertedValue);
-  console.log(inputValue.value);
+
   console.log(calculatedValue);
 
 
