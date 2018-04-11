@@ -35,7 +35,7 @@ const createTable = (response) =>{
     let rowDiv= create("#resultTable","div",null)
     let array= [
       element.name,element.rank,element.price_usd,
-      element.percent_change_1h,element.last_updated
+      element.percent_change_1h,(element.last_updated)
     ]
         console.log(array);
     array.forEach((content)=>{
@@ -55,4 +55,16 @@ fetch("GET","https://api.coinmarketcap.com/v1/ticker/",inputValue,(res)=>{
 // console.log(res);
 createTable(res)
 })
+})
+
+selector("#formID").addEventListener("submit",(event)=>{
+    event.preventDefault();
+    let sourceCoin=selector("#sourceCoin").value
+    let sourceValue =selector("#inputConvert").value
+    let outCoin =selector("#outCoin").value
+    fetch("POST","/convert","?"+sourceCoin+"?to"+"?"+outCoin,(res)=>{
+      let convertedValue=res
+      let toatalConverted=sourceValue*res
+      selector("#outputConvert").value
+    })
 })
