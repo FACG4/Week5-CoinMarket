@@ -12,11 +12,12 @@ const contentType = {
 }
 
 const serveFiles = (endpoint, res)=>{
-  const filePath = path.join(__dirname, '..','public', endpoint);//end / /css/style.css /js/dom.js
-  const fileExtention = endpoint.split('.')[1];// css js html
+  const filePath = path.join(__dirname, '..','public', endpoint);
+  const fileExtention = endpoint.split('.')[1];
   res.writeHead(200,{'Content-Type':`${contentType[fileExtention]}`});
   fs.readFile(filePath, (error, file)=>{
-    if (error){console.log(error);
+    if (error){
+      console.log(error);
     }
     res.end(file);
   });
@@ -35,7 +36,5 @@ const getData = (url , cb)=>{
     })
   })
 }
-
-
 
 module.exports={serveFiles,getData}

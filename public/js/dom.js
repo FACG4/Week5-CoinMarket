@@ -50,35 +50,50 @@ const createTable = (response) => {
   })
 
 }
-//
-// selector("#searchButton").addEventListener('click',(event)=>{
-//   event.preventDefault();
-//
-// let inputValue=selector("#inputId").value
-// // fetch("POST","/search",inputValue,(res)=>{
-// fetch("GET","https://api.coinmarketcap.com/v1/ticker/",inputValue,(res)=>{
-// // console.log(res);
-// createTable(res)
-// })
-// })
 
 
+
+if(selector('#sourceCoin')){
   let convertedValue = 1;
 
-selector("#converteBtn").addEventListener("click",(event)=>{
-    event.preventDefault();
-    let sourceCoin=selector("#sourceCoin").value
-    let sourceValue =selector("#inputConvert").value
-    let outCoin =selector("#outCoin").value
-    let values = sourceCoin +'.'+ outCoin ;
-    console.log(values);
-    fetch("POST","/c",values,(res)=>{
+function getData(){
 
-      convertedValue=Object.values(res)[0]
-    })
+  let sourceCoin=selector("#sourceCoin").value
+  let outCoin =selector("#outCoin").value
+  let values = sourceCoin +'.'+ outCoin ;
+  fetch("POST","/c",values,(res)=>{
+
+    convertedValue=Object.values(res)[0]
+
+    let calculatedValue = calculate(inputValue.value ,  convertedValue)
+    outputValue.value=calculatedValue
+
 })
+}
 
 
+  selector('#sourceCoin').addEventListener("click",(event)=>{
+      event.preventDefault();
+      getData();
+  })
+
+
+
+  selector('#outCoin').addEventListener("click",(event)=>{
+      event.preventDefault();
+      getData();
+  })
+
+
+    let inputValue = selector("#inputConvert");
+    let outputValue = selector('#outputConvert')
+  inputValue.addEventListener("keyup",(event)=>{
+    let calculatedValue = calculate(inputValue.value ,  convertedValue)
+    outputValue.value=calculatedValue
+
+  })
+
+  }
 
 const createDetails = (res, id) => {
 
@@ -100,20 +115,19 @@ const creatList=(nameArr,symbolArr)=>{
 if (selector("#searchButton")) {
   selector("#searchButton").addEventListener('click', (event) => {
     event.preventDefault();
-    // console.log('assasdasd');
+
     let inputValue = selector("#inputId")
+    if(inputValue.value.trim() !== ''){
     fetch("POST","/search",inputValue.value,(res)=>{
-    // fetch("GET", "https://api.coinmarketcap.com/v1/ticker/", inputValue, (res) => {
-    // console.log(res);
-      createTable(res)
+
+      createTable(res.slice(0,1))
 
     })
+  }else{
+    alert('enter some data')
+  }
   })
 }
-
-
-
-
 
 
 if (selector("#formID")) {
@@ -143,6 +157,7 @@ if (selector("#formID")) {
     "PART", "WAX", "REQ", "NEBL", "DENT", "PAY", "STORJ"
   ]
    creatList(coinName,coinSymbol)
+
 }
 
 const deletefig = () => {
@@ -158,26 +173,15 @@ const array = document.getElementsByClassName('fig')
 let array2 = Array.prototype.slice.call(array)
 array2.forEach((fig) => {
   fig.addEventListener("click", (event) => {
+
     deletefig()
     let symbol = fig.id
-    console.log(symbol);
+
     fetch("POST", "/search", symbol, (res) => {
-      // console.log(res);
+
       createDetails(res[0], fig.id);
 
     })
   })
 
-
 })
-
-  let inputValue = selector("#inputConvert");
-inputValue.addEventListener("keyup",(event)=>{
-  let calculatedValue = calculate(inputValue.value ,  convertedValue)
-
-  selector('#outputConvert').value = calculatedValue
-
-  // let convertedVal = calculate(inputValue);
-
-
-})*/

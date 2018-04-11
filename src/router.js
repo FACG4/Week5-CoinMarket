@@ -3,6 +3,7 @@ const https = require('https')
 
 const router = (req, res)=>{
   const endpoint = req.url ;
+
   if(endpoint === '/'){
 
       handler.serveFiles('/index.html',res)
@@ -24,12 +25,11 @@ const router = (req, res)=>{
     req.on("data",(chunk)=>{
     allData += chunk  ;
   }).on('end',()=>{
-    // console.log(allData);
+
       let splitedData = allData.split(".")
-      console.log(splitedData[0],splitedData[1]);
       handler.getData(`https://min-api.cryptocompare.com/data/price?fsym=${splitedData[0]}&tsyms=${splitedData[1]}`,(data)=>{
       res.end(data);
-      // console.log(data);
+
     });
   })
 
@@ -39,21 +39,16 @@ const router = (req, res)=>{
     req.on("data",(chunk)=>{
     allData += chunk  ;
   }).on('end',()=>{
-    // console.log(allData);
 
       handler.getData(`https://api.coinmarketcap.com/v1/ticker/${allData}/`,(data)=>{
       res.end(data);
-      // console.log(data);
     });
   })
 
 
   }
-    // else if (['/css/style.css', '/js/dom.js', '/js/logic.js','/img/'].includes(endpoint)){
-    // handler.serveFiles(endpoint, res)
-  else {
-      // res.end('not found')
-      handler.serveFiles(endpoint, res)
+    else {
+    handler.serveFiles(endpoint, res)
   }
 }
 module.exports = router
