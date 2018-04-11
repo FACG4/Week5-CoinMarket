@@ -76,3 +76,16 @@ figcaption{
   width: 200px;
   text-align: center;
 }
+
+.convertContainer{
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+  background-color: #8a8a8a
+}
+.homeSection{
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  background-color:#175
+}
