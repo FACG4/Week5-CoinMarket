@@ -62,7 +62,7 @@ const createTable = (response) => {
 // })
 // })
 
-/*
+
   let convertedValue = 1;
 
 selector("#converteBtn").addEventListener("click",(event)=>{
@@ -71,16 +71,14 @@ selector("#converteBtn").addEventListener("click",(event)=>{
     let sourceValue =selector("#inputConvert").value
     let outCoin =selector("#outCoin").value
     let values = sourceCoin +'.'+ outCoin ;
+    console.log(values);
     fetch("POST","/c",values,(res)=>{
 
       convertedValue=Object.values(res)[0]
+    })
+})
 
-      console.log(convertedValue);
-})
-})
-*/
-      // let toatalConverted=sourceValue*res
-      // selector("#outputConvert").value
+
 
 const createDetails = (res, id) => {
 
@@ -114,6 +112,10 @@ if (selector("#searchButton")) {
 }
 
 
+
+
+
+
 if (selector("#formID")) {
   const coinName = ["Bitcoin", "Ethereum", "Ripple", "Bitcoin Cash", "Litecoin", "EOS", "Cardano",
     "Stellar", "NEO", "IOTA", "Monero", "TRON", "Dash", "Tether", "NEM", "VeChain",
@@ -141,18 +143,6 @@ if (selector("#formID")) {
     "PART", "WAX", "REQ", "NEBL", "DENT", "PAY", "STORJ"
   ]
    creatList(coinName,coinSymbol)
-  // selector("#formID").addEventListener("submit", (event) => {
-  //   event.preventDefault();
-  //   let sourceCoin = selector("#sourceCoin").value
-  //   let sourceValue = selector("#inputConvert").value
-  //   let outCoin = selector("#outCoin").value
-  //   fetch("POST", "/convert", "?" + sourceCoin + "?to" + "?" + outCoin, (res) => {
-  //     let convertedValue = res
-  //     let toatalConverted = sourceValue * res
-  //     selector("#outputConvert").value
-  //   })
-  // })
-
 }
 
 const deletefig = () => {
@@ -178,14 +168,14 @@ array2.forEach((fig) => {
     })
   })
 
+
 })
-/*
+
   let inputValue = selector("#inputConvert");
 inputValue.addEventListener("keyup",(event)=>{
   let calculatedValue = calculate(inputValue.value ,  convertedValue)
 
-  console.log(calculatedValue);
-
+  selector('#outputConvert').value = calculatedValue
 
   // let convertedVal = calculate(inputValue);
 

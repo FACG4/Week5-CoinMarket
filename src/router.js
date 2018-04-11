@@ -49,8 +49,11 @@ const router = (req, res)=>{
 
 
   }
-    else {
-    handler.serveFiles(endpoint, res)
+    // else if (['/css/style.css', '/js/dom.js', '/js/logic.js','/img/'].includes(endpoint)){
+    // handler.serveFiles(endpoint, res)
+  else {
+      // res.end('not found')
+      handler.serveFiles(endpoint, res)
   }
 }
 module.exports = router
