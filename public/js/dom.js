@@ -115,8 +115,6 @@ if (selector("#searchButton")) {
 
 
 
-<<<<<<< HEAD
-=======
 
 if (selector("#formID")) {
   const coinName = ["Bitcoin", "Ethereum", "Ripple", "Bitcoin Cash", "Litecoin", "EOS", "Cardano",
@@ -145,7 +143,7 @@ if (selector("#formID")) {
     "PART", "WAX", "REQ", "NEBL", "DENT", "PAY", "STORJ"
   ]
    creatList(coinName,coinSymbol)
-
+}
 
 const deletefig = () => {
   const array = document.getElementsByClassName('details')
