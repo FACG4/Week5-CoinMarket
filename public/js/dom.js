@@ -67,14 +67,20 @@ selector("#converteBtn").addEventListener("click",(event)=>{
     let sourceValue =selector("#inputConvert").value
     let outCoin =selector("#outCoin").value
     let values = sourceCoin +'.'+ outCoin ;
+    console.log(values);
     fetch("POST","/c",values,(res)=>{
 
       convertedValue=Object.values(res)[0]
+    })
+})
 
-      console.log(convertedValue);
+let inputValue = selector("#inputConvert");
+inputValue.addEventListener("keyup",(event)=>{
+let calculatedValue = calculate(inputValue.value ,  convertedValue)
+selector('#outputConvert').value = calculatedValue
 
-      // let toatalConverted=sourceValue*res
-      // selector("#outputConvert").value
+})
+
 
 const createDetails = (res,id) =>{
 
@@ -97,21 +103,24 @@ if (selector("#searchButton")) {
     })
   })
 }
+// let convertedValue=1 ;
+// selector("#converteBtn").addEventListener("click",(event)=>{
+//       event.preventDefault();
+//       let sourceCoin=selector("#sourceCoin").value
+//       let sourceValue =selector("#inputConvert").value
+//       let outCoin =selector("#outCoin").value
+//       let values = sourceCoin +"." + outCoin ;
+//       console.log('sds');
+//       fetch("POST",'/c',values,(res)=>{
+//         convertedValue=res
+//
+//       })
+//   })
 
-if (selector("#formID")) {
-  selector("#formID").addEventListener("submit",(event)=>{
-      event.preventDefault();
-      let sourceCoin=selector("#sourceCoin").value
-      let sourceValue =selector("#inputConvert").value
-      let outCoin =selector("#outCoin").value
-      fetch("POST","/convert","?"+sourceCoin+"?to"+"?"+outCoin,(res)=>{
-        let convertedValue=res
-        let toatalConverted=sourceValue*res
-        selector("#outputConvert").value
-      })
-  })
 
-}
+
+
+
 
 const deletefig=()=>{
   const array = document.getElementsByClassName('details')
@@ -134,16 +143,4 @@ array2.forEach((fig) =>{
 
     })
   })
-})
-
-  let inputValue = selector("#inputConvert");
-inputValue.addEventListener("keyup",(event)=>{
-  let calculatedValue = calculate(inputValue.value ,  convertedValue)
-
-  console.log(calculatedValue);
-
-
-  // let convertedVal = calculate(inputValue);
-
-
 })
