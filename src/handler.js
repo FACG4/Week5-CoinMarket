@@ -21,7 +21,7 @@ const serveFiles = (endpoint, res)=>{
     res.end(file);
   });
 }
-
+// let data ;
 const getCurrency = (url , cb)=>{
   http.get(url,response=>{
     response.setEncoding("utf-8");
@@ -29,20 +29,20 @@ const getCurrency = (url , cb)=>{
     response.on('data',(chunck)=>{
       data += chunck;
     }).on('end',()=>{
-      cb(null,response,data)
+      cb(data)
     }).on('error', (err)=>{
       console.log(err);
     })
   })
 }
+//
+// const request = (url)=>{
+//   getCurrency(url,(err,response,body)=>{
+//      // console.log(body);
+//      data = body
+//   })
+//   return data
+// }
 
-const request = (url)=>{
-  getCurrency(url,(err,response,body)=>{
-     console.log(body);
 
-
-  })
-
-}
-
-module.exports={serveFiles,request}
+module.exports={serveFiles,getCurrency}
