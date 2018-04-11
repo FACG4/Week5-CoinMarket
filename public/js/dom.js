@@ -12,7 +12,6 @@ xhr.send(value)
 }
 
 
-
 const selector=(text)=>{
   return document.querySelector(text)
 }
@@ -45,26 +44,46 @@ const createTable = (response) =>{
   })
 
 }
+//
+// selector("#searchButton").addEventListener('click',(event)=>{
+//   event.preventDefault();
+//
+// let inputValue=selector("#inputId").value
+// // fetch("POST","/search",inputValue,(res)=>{
+// fetch("GET","https://api.coinmarketcap.com/v1/ticker/",inputValue,(res)=>{
+// // console.log(res);
+// createTable(res)
+// })
+// })
 
-selector("#searchButton").addEventListener('click',(event)=>{
-  event.preventDefault();
+  let convertedValue = 1;
 
-let inputValue=selector("#inputId").value
-// fetch("POST","/search",inputValue,(res)=>{
-fetch("GET","https://api.coinmarketcap.com/v1/ticker/",inputValue,(res)=>{
-// console.log(res);
-createTable(res)
-})
-})
-
-selector("#formID").addEventListener("submit",(event)=>{
+selector("#converteBtn").addEventListener("click",(event)=>{
     event.preventDefault();
     let sourceCoin=selector("#sourceCoin").value
     let sourceValue =selector("#inputConvert").value
     let outCoin =selector("#outCoin").value
-    fetch("POST","/convert","?"+sourceCoin+"?to"+"?"+outCoin,(res)=>{
-      let convertedValue=res
-      let toatalConverted=sourceValue*res
-      selector("#outputConvert").value
+    let values = sourceCoin +'.'+ outCoin ;
+    fetch("POST","/c",values,(res)=>{
+
+      convertedValue=Object.values(res)[0]
+
+      console.log(convertedValue);
+
+      // let toatalConverted=sourceValue*res
+      // selector("#outputConvert").value
     })
+})
+
+  let inputValue = selector("#inputConvert");
+inputValue.addEventListener("keyup",(event)=>{
+  let calculatedValue = calculate(inputValue.value ,  convertedValue)
+  console.log(convertedValue);
+  console.log(inputValue.value);
+  console.log(calculatedValue);
+
+
+  // let convertedVal = calculate(inputValue);
+
+
 })
