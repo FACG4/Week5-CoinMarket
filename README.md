@@ -36,7 +36,7 @@ server.js
 HOW TO INSTALL IT!
 Clone this repo.
 
-git clone https://github.com/facg3/msn-currencies-changes.git
+git clone ```https://github.com/FACG4/Week5-CoinMarket.git```
 
 Run npm install to install all dependencies
 
