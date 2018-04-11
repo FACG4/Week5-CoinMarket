@@ -37,5 +37,4 @@ const getData = (url , cb)=>{
   })
 }
 
-
 module.exports={serveFiles,getData}
