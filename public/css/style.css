@@ -1,6 +1,7 @@
 body{
-  /* background-image: url("https://cdn.pixabay.com/photo/2018/04/04/15/14/bitcoin-3290060_960_720.jpg"); */
-/* background-size: cover; */
+  /* background-image: url("./img/baac.jpg");
+ background-size: cover; */
+ text-align: center;
 }
 .tableHead{
   display: flex;
@@ -74,4 +75,17 @@ figcaption{
   height: 100px;
   width: 200px;
   text-align: center;
+}
+
+.convertContainer{
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+  background-color: #8a8a8a
+}
+.homeSection{
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  background-color:#175
 }
