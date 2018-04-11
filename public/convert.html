@@ -9,6 +9,20 @@
 </head>
 <body>
   <section class="container">
+
+    <section class="homeSection">
+      <div class="home">
+        <h1 class="header">GO Back For Home Page</h1>
+        <p class="homeParagraph"></p>
+        <button type="button" name="button" class="homeButton" id="homeButton">Home Page</button>
+      </div>
+      <div class="homeImage">
+      <img src="" alt="homeImage">
+
+      </div>
+    </section>
+
+
     <div class="convertDiv">
       <form class="" action="index.html" method="post" id="formID">
       <div class="row"id="row1">
@@ -18,8 +32,8 @@
       <div class="row" id="row2">
         <div class="fromDiv">
           <label for="inputConverte">input the value to convert</label>
-            <input type="number" name="" value="" id="inputConverte">
-            <select class="selectsSource" name="">
+            <input type="number" name="" value="" id="inputConvert">
+            <select class="selectsSource" name="" id="sourceCoin">
 
               	<option value="USD" selected="selected">United States Dollars</option>
               	<option value="EUR">Euro</option>
@@ -109,8 +123,8 @@
         </div>
         <div class="toDiv">
           <label for="outputConverte">the output</label>
-            <input type="number" name="" value="" id="outputConverte" disabled>
-            <select class="selectsOut" name="">
+            <input type="number" name="" value="" id="outputConvert" >
+            <select class="selectsOut" name="" id="outCoin">
 
                 <option value="USD" selected="selected">United States Dollars</option>
                 <option value="EUR">Euro</option>
@@ -199,8 +213,9 @@
       </div>
 
     </form>
-    </div>
+  </div>
   </section>
-
+  <script type="text/javascript" src="js/dom.js"> </script>
+  <script type="text/javascript" src ="js/logic.js"></script>
 </body>
 </html>

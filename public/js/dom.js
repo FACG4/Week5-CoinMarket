@@ -57,4 +57,14 @@ createTable(res)
 })
 })
 
-selector("#formID").
+selector("#formID").addEventListener("submit",(event)=>{
+    event.preventDefault();
+    let sourceCoin=selector("#sourceCoin").value
+    let sourceValue =selector("#inputConvert").value
+    let outCoin =selector("#outCoin").value
+    fetch("POST","/convert","?"+sourceCoin+"?to"+"?"+outCoin,(res)=>{
+      let convertedValue=res
+      let toatalConverted=sourceValue*res
+      selector("#outputConvert").value
+    })
+})
