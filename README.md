@@ -6,7 +6,7 @@
 An app that uses API to make it easier to any user who wants to search about any currencies that they wants and find it's price according to BTC, ETC, ETH, XMR and USDT.
 
 ##HOW?
-.As we are three in the team we did not split the work, we worked the project all together,
+.As we are four in the team we did not split the work, we worked the project all together,
 .first of all we analyize and understand the project.
 .Then we made the staructure of the files inside the project(public and src)
 .Then we statr working
@@ -36,10 +36,10 @@ server.js
 HOW TO INSTALL IT!
 Clone this repo.
 
-git clone ```https://github.com/FACG4/Week5-CoinMarket.git```
+git clone https://github.com/FACG4/Week5-CoinMarket
 
 Run npm install to install all dependencies
 
 Run npm run watch to start the server using nodemon (which will automatically restart Node when changes are detected in your files)
 
-You can run the code locally at localhost:8000
+You can run the code locally at localhost:3000
