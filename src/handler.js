@@ -36,16 +36,6 @@ const getData = (url , cb)=>{
   })
 }
 
-//convert function
-
-//
-// const request = (url)=>{
-//   getCurrency(url,(err,response,body)=>{
-//      // console.log(body);
-//      data = body
-//   })
-//   return data
-// }
 
 
 module.exports={serveFiles,getData}
