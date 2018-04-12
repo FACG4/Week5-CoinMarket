@@ -35,12 +35,21 @@ if (value) {
   }
 }
 
+const fun =(i)=>{
+  var t = new Date(i * 1000)
+  var formatted = ('0' + t.getHours()).slice(-2) + ':' + ('0' + t.getMinutes()).slice(-2);
+  return formatted
+}
+
+
+
+
 const createTable = (response) => {
   response.forEach((element) => {
     let rowDiv = create("#resultTable", "div", null)
     let array = [
       element.name, element.rank, element.price_usd,
-      element.percent_change_1h, (element.last_updated)
+      element.percent_change_1h, fun(element.last_updated)
     ]
 
     array.forEach((content) => {
@@ -119,9 +128,9 @@ if (selector("#searchButton")) {
     let inputValue = selector("#inputId")
     if(inputValue.value.trim() !== ''){
     fetch("POST","/search",inputValue.value,(res)=>{
-
+selector("#resultId").setAttribute("class","displayed")
       createTable(res.slice(0,1))
-
+window.scrollTo(0, 50000);
     })
   }else{
     alert('enter some data')
@@ -185,3 +194,4 @@ array2.forEach((fig) => {
   })
 
 })
+selector("#resultId").setAttribute("class","none")
