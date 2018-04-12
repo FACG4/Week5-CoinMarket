@@ -2,44 +2,49 @@
 
 [![Build Status](https://travis-ci.org/FACG4/Week5-CoinMarket.svg?branch=master)](https://travis-ci.org/FACG4/Week5-CoinMarket)
 
-##Project idea
-An app that uses API to make it easier to any user who wants to search about any currencies that they wants and find it's price according to BTC, ETC, ETH, XMR and USDT.
+![CoinMarket](https://cdn-images-1.medium.com/max/2000/1*BnXHRV0vQCqJqpzE6escSQ.jpeg)
 
-##HOW?
-.As we are four in the team we did not split the work, we worked the project all together,
-.first of all we analyize and understand the project.
-.Then we made the staructure of the files inside the project(public and src)
-.Then we statr working
+## Project idea
+Our website give the ability to the user to search about any Cryptocurrency to view it's details and you can convert from one to another .
 
-Day 1
-Discuss app purpose and architecture
-Create initial folder structure and files
-Add more specific back-end tests
-Day 2
-Enable back-end to pass relevant data to the front-end
-Set up Codecov, Travis, Istanbul and initial tests using tape and shot
-Set up Heroku
-Add styling and DOM manipulation to display data
-Code coverage
+## HOW?
+* Day 1:
 
-PROJECT STRUCTURE!
-Public: which contains the front-end files
-tests
-dom.js
-index.html
-style.css
-src: which contains the back-end files
-countries.json
-handler.js
-router.js
-server.js
-HOW TO INSTALL IT!
-Clone this repo.
+   *  Discuss our website purpose and architecture.
+   *  Creating our server,handler's,router's and starting to create our functions.
+   *  Modularisation.
 
-git clone https://github.com/FACG4/Week5-CoinMarket
+* Day 2:
+  * Completing our functions,handler's and router's.
+  * Testing.
+  * Deploying on Heroku and traves.
 
-Run npm install to install all dependencies
+## What is the Sites structure?
+  The site contains 2 folders:
+  1. **public folder:**
+  the frond end part contains two sub-folders :**css**: contains the img folder and style.css file, and **js folder** contains the (dom.js and logic.js).and contains the (index.html,,convert.html,test.js).
 
-Run npm run watch to start the server using nodemon (which will automatically restart Node when changes are detected in your files)
+  2. **src folder:** The back end part contains js files (handler.js, server.js.,router.js and test.js)
 
-You can run the code locally at localhost:3000
+## How to use ?
+ * User Side :
+
+    * Open url for the website .
+    * choose the 'Cryptocurrency' from the most popular to review it's details.
+    * choose the `Cryptocurrency` in the search input box bellow.
+    * you can convert.
+
+
+  * Developer Side:
+
+      ` git clone "git@github.com:FACG4/Week5-CoinMarket.git"`
+
+      Run `npm install` to install all dependencies`
+
+      Run  `npm start `
+
+Navigate to http://localhost:3000/ in your browser
+
+[check the site](https://fagc4coin.herokuapp.com/)
+
+>Done By : Mohameed,Ishak,marwa,ramy.
